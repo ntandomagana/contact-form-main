@@ -75,9 +75,143 @@ input:not([type="checkbox"]):not([type="radio"]):hover, textarea:hover {
   }
 
   textarea {
+    cursor: pointer;
     width: 100%;
     font-size: 16px;
+    margin: 8px 0;
+    resize: none;
+    border: 1px solid hsl(169, 82%, 27%);
     padding: 10px;
     border-radius: 5px;
 
   }
+
+  #query {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+  }
+
+  .query-type {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+    border: 1px solid var(--grey-500-medium);
+    width: 100%;
+    /* outline: none;
+    font-size: 16px; */
+    /* background-color: var(--white);
+    color: var(--grey-900-darker);
+    transition: background-color 0.2s ease; */
+  }
+  input[type=radio] {
+    accent-color: hsl(169, 82%, 27%);
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+
+  button {
+    padding: 15px 0;
+    background-color: var(--green-600-medium);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    margin-top: 8px;
+  }
+
+  button:hover {
+    background-color: hsl(169, 82%, 15%);
+  }
+
+  .checkbox > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  input[type=checkbox] {
+    accent-color: var(--grey-900-darker);
+    width: 15px;
+  }
+
+  span.error {
+    font-size: 14px;
+    display: block;
+    color: var(--red);
+  }
+
+  span.hidden {
+    display: none;
+  }
+
+  .radio-selected {
+    background-color: var(--green-600-medium);
+  }
+
+  .star {
+    color: var(--red);
+  }
+
+  .toast {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 400px;
+    background-color: var(--green-600-medium);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 1s linear;
+    /* opacity: 0;
+    visibility: hidden;
+    animation: fade-in-out 1s; */
+  }
+
+  .toast > div {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  .toast img {
+    width: 14px;
+  }
+
+  .toast span {
+    font-weight: bold;
+  }
+
+  /* this moves the notification off the screen */
+  .toast.hidden {
+    transform: translateY(-400px);
+  }
+
+  @media screen and (max-width: 400px) {
+    .form-container {
+        width: 300px;
+    }
+
+
+    /* //this prevents the inouts into wrapping in a new line */
+    .name-inputs {
+         flex-wrap: nowrap;
+    }
+
+    #query {
+        flex-wrap: wrap;
+    }
+
+    .toast {
+        width: 300px;
+    }
